@@ -1,4 +1,4 @@
-ffrom flask import *
+from flask import *
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 import os
@@ -116,3 +116,4 @@ def order_show():
     print(orders)
     print(show)
     return render_template("orders.html",orders=show)
+app.run()
