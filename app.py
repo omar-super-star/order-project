@@ -1,4 +1,4 @@
-ffrom flask import *
+from flask import *
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 import os
@@ -73,6 +73,7 @@ def order_post(id):
     db.session.add(o)
     db.session.commit()
     return redirect(url_for("order_get",id=id))
+
 @app.route("/add_order/<id>",methods=["GET"])
 def order_get(id):
    return render_template("form_order.html",id=id)
@@ -86,6 +87,7 @@ def finish_order_fun(id):
     db.session.add(finish_ord)
     db.session.commit()
     return redirect(url_for("order_show"))
+
 @app.route("/user/show_finish_order",methods=["GET"])
 def order_finish_show():
     orders=list(db.session.query(order).all())
