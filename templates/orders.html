@@ -20,7 +20,7 @@ h1
 .our-team-main
 {
 	width:100%;
-	height:auto;
+	height:350px;
 	border-bottom:5px #323233 solid;
 	background:#fff;
 	text-align:center;
@@ -53,11 +53,11 @@ h1
 .team-back
 {
 	width:100%;
-	height:auto;
+	height:350px;
 	position:absolute;
 	top:0;
 	left:0;
-	padding:5px 15px 0 15px;
+	padding:5px 15px 15px 15px;
 	text-align:left;
 	background:#fff;
 	
@@ -66,7 +66,7 @@ h1
 .team-front
 {
 	width:100%;
-	height:auto;
+	height:350px;
 	position:relative;
 	z-index:10;
 	background:#fff;
@@ -77,7 +77,7 @@ h1
 
 .our-team-main:hover .team-front
 {
-	bottom:-200px;
+	bottom:-350px;
 	transition: all 0.5s ease;
 }
 
@@ -111,20 +111,26 @@ h1
             
             <div class="team-front">
 				
-            <img src="/static/image/{{order.url}}" class="img-fluid" />
+            <img src="/static/image/{{order.url}}" class="img-fluid img-thumbnail" style="width:200;height:250"/>
             
             </div>
             
             <div class="team-back">
             <span>
                 <p>الاسم:{{order.name}}</p>
+                <br>
                 <p>العنوان:{{order.address}}</p>
+                <br>
 				<p>الكمية:{{order.number}}</p>
+                <br>
+                <p>الكمية:{{order.contact}}</p>
+                <br>
 				{% if finish %}
 				{% else %}
-				<form action="/finish_order/{{order.id}}" method="POST">
+				<form action="/finish_order/{{order.id}}" method="POST" style="width:50px; height:50px;">
 					<input type="submit" value="تم البيع "> 
 				</form>
+                <br>
                 {% endif %}
             </span>
             </div>
