@@ -1,11 +1,14 @@
 body {
-    background:url(https://preview.ibb.co/g6MVS9/gg.png);
+    background:url(https://image.freepik.com/free-vector/courier-delivering-order-customer-door-man-getting-parcel-box-package-flat-vector-illustration-postman-shipping-service_74855-8309.jpg);
     font-family:'PT Sans',Helvetica, Arial, sans-serif;
     color:#fff;
        background-repeat: no-repeat;
        background-size:cover;
     }
-    
+
+    .colorspan {
+    color:white;
+    }
     .page-container {
     margin: 120px auto 0 auto;
     }
