@@ -1,4 +1,4 @@
-from flask import *
+ffrom flask import *
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 import os
@@ -29,7 +29,7 @@ class order(db.Model):
     finish=db.Column(db.Integer(),default=0)
 class finish_order(db.Model):
     id = db.Column(db.Integer().with_variant(db.Integer, "sqlite"), primary_key=True)
-    order=product=db.Column(db.Integer(),db.ForeignKey('order.id'),
+    order=db.Column(db.Integer(),db.ForeignKey('order.id'),
         nullable=False)
 
 
@@ -68,7 +68,8 @@ def order_post(id):
     o=order(name=request.form.get("name"),
               address=request.form.get("address"),
               number=request.form.get("number"),
-              product=id)
+              product=id,
+            contact=request.form.get("contact"))
     db.session.add(o)
     db.session.commit()
     return redirect(url_for("order_get",id=id))
@@ -115,4 +116,3 @@ def order_show():
     print(orders)
     print(show)
     return render_template("orders.html",orders=show)
-
