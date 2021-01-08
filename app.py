@@ -45,7 +45,7 @@ def add_product_form():
                                url=""
                                )
 
-@app.route("/")
+@app.route("/<id>")
 def get_the_url(id):
     session["url_form"]=request.base_url+"add_order/"+str(id)
     return redirect(url_for("add_product_form"))
