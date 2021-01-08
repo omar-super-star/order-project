@@ -47,7 +47,7 @@ def add_product_form():
 
 @app.route("/<id>")
 def get_the_url(id):
-    session["url_form"]=request.base_url+"add_order/"+str(id)
+    session["url_form"]=request.base_url.split("/")[0]+"add_order/"+str(id)
     return redirect(url_for("add_product_form"))
 @app.route("/add_product",methods=["POST"])
 def new_order():
@@ -64,7 +64,7 @@ def new_order():
     session["url_form"]="add_order/"+str(p.id)
     return redirect(url_for("get_the_url",id=p.id))
 
-@app.route("/add_order/<id>",methods=["POST"])
+@app.route("/<id>add_order/<id>",methods=["POST"])
 def order_post(id):
     o=order(name=request.form.get("name"),
               address=request.form.get("address"),
