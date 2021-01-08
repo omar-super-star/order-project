@@ -60,7 +60,7 @@ def new_order():
               image_url=filename)
     db.session.add(p)
     db.session.commit()
-    
+    session["url_form"]=""
     session["url_form"]="add_order/"+str(p.id)
     return redirect(url_for("get_the_url"))
 
