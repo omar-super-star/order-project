@@ -26,6 +26,7 @@ class order(db.Model):
     number=db.Column(db.Integer(), nullable=True)
     product=db.Column(db.Integer(),db.ForeignKey('product.id'),
         nullable=False)
+    contact=db.Column(db.String(250), nullable=True)
     finish=db.Column(db.Integer(),default=0)
 class finish_order(db.Model):
     id = db.Column(db.Integer().with_variant(db.Integer, "sqlite"), primary_key=True)
