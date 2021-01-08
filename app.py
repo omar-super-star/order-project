@@ -49,7 +49,7 @@ def add_product_form():
 def get_the_url(id):
     base=request.base_url.split("/")
     base.pop()
-    session["url_form"]="/".join(base)+"add_order/"+str(id)
+    session["url_form"]="/".join(base)+"/add_order/"+str(id)
     return redirect(url_for("add_product_form"))
 @app.route("/add_product",methods=["POST"])
 def new_order():
